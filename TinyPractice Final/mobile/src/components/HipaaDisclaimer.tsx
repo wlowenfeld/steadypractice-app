@@ -1,0 +1,154 @@
+import React, { useState } from 'react';
+import { View, Text, ScrollView, Pressable, Linking } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { Lock, Check } from 'lucide-react-native';
+import Animated, { FadeIn, FadeInDown } from 'react-native-reanimated';
+import * as Haptics from 'expo-haptics';
+import { useTheme } from '@/lib/theme';
+import { useSecurity } from '@/lib/security';
+
+export default function HipaaDisclaimer() {
+  const { colors, isDark } = useTheme();
+  const { acceptHipaa } = useSecurity();
+  const [acknowledged, setAcknowledged] = useState(false);
+
+  const handleAccept = async () => {
+    if (!acknowledged) return;
+    Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+    await acceptHipaa();
+  };
+
+  return (
+    <SafeAreaView className="flex-1" style={{ backgroundColor: colors.bg }}>
+      <ScrollView
+        className="flex-1"
+        contentContainerStyle={{ paddingBottom: 40 }}
+        showsVerticalScrollIndicator={false}
+      >
+        {/* Header */}
+        <Animated.View
+          entering={FadeIn.delay(100)}
+          className="items-center pt-12 pb-6 px-6"
+        >
+          <Lock size={32} color={colors.textTertiary} />
+          <Text className="text-2xl font-bold text-center mt-6" style={{ color: colors.text }}>
+            Privacy Notice
+          </Text>
+          <Text className="text-base text-center mt-2" style={{ color: colors.textSecondary }}>
+            Please review before using TinyPractice
+          </Text>
+        </Animated.View>
+
+        {/* Content Card */}
+        <Animated.View
+          entering={FadeInDown.delay(150).springify()}
+          className="mx-4 mb-4"
+        >
+          <View
+            className="rounded-2xl p-5"
+            style={{ backgroundColor: colors.card, borderWidth: 1, borderColor: colors.cardBorder }}
+          >
+            <View className="gap-4">
+              <Text className="text-base" style={{ color: colors.textSecondary }}>
+                All data is stored <Text className="font-semibold" style={{ color: colors.text }}>locally on your device only</Text>. Nothing is transmitted to external servers or cloud services.
+              </Text>
+              <Text className="text-base" style={{ color: colors.textSecondary }}>
+                You are responsible for securing your device with a passcode. PIN protection adds an extra layer of security within the app.
+              </Text>
+              <Text className="text-base" style={{ color: colors.textSecondary }}>
+                This app is a tool to assist with record-keeping. It is your responsibility to ensure compliance with all applicable privacy laws and regulations.
+              </Text>
+              <Text className="text-base" style={{ color: colors.textSecondary }}>
+                Do not share your device or app PIN with unauthorized individuals. Regularly back up your device to prevent data loss.
+              </Text>
+            </View>
+          </View>
+        </Animated.View>
+
+        {/* Legal Notice */}
+        <Animated.View
+          entering={FadeInDown.delay(200).springify()}
+          className="mx-4 mb-4"
+        >
+          <View
+            className="rounded-2xl p-5"
+            style={{ backgroundColor: colors.card, borderWidth: 1, borderColor: colors.cardBorder }}
+          >
+            <Text className="text-sm leading-relaxed" style={{ color: colors.textTertiary }}>
+              By using this application, you acknowledge that you understand and agree to these terms. This app is provided "as is" without warranty of any kind. The developer is not responsible for any unauthorized access to your data resulting from inadequate device security measures or user error.
+            </Text>
+          </View>
+        </Animated.View>
+
+        {/* Legal Links */}
+        <Animated.View
+          entering={FadeInDown.delay(250).springify()}
+          className="mx-4 mb-6 flex-row justify-center gap-4"
+        >
+          <Pressable onPress={() => Linking.openURL('https://tinypractice.app/privacy.html')}>
+            <Text className="text-sm underline" style={{ color: colors.accent }}>
+              Privacy Policy
+            </Text>
+          </Pressable>
+          <Text className="text-sm" style={{ color: colors.textTertiary }}>·</Text>
+          <Pressable onPress={() => Linking.openURL('https://tinypractice.app/terms.html')}>
+            <Text className="text-sm underline" style={{ color: colors.accent }}>
+              Terms of Service
+            </Text>
+          </Pressable>
+        </Animated.View>
+
+        {/* Acknowledgment Checkbox */}
+        <Animated.View
+          entering={FadeInDown.delay(300).springify()}
+          className="mx-4 mb-6"
+        >
+          <Pressable
+            onPress={() => {
+              Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+              setAcknowledged(!acknowledged);
+            }}
+            className="flex-row items-center p-4 rounded-2xl"
+            style={{ backgroundColor: colors.card, borderWidth: 1, borderColor: colors.cardBorder }}
+          >
+            <View
+              className="w-6 h-6 rounded items-center justify-center mr-3"
+              style={{
+                backgroundColor: acknowledged ? '#10B981' : colors.bgSecondary,
+                borderWidth: acknowledged ? 0 : 2,
+                borderColor: colors.cardBorder,
+              }}
+            >
+              {acknowledged && <Check size={16} color="#FFFFFF" strokeWidth={3} />}
+            </View>
+            <Text className="flex-1 text-base" style={{ color: colors.text }}>
+              I have read and understand the privacy notice and my responsibilities
+            </Text>
+          </Pressable>
+        </Animated.View>
+
+        {/* Accept Button */}
+        <Animated.View
+          entering={FadeInDown.delay(350).springify()}
+          className="mx-4"
+        >
+          <Pressable
+            onPress={handleAccept}
+            disabled={!acknowledged}
+            className="py-4 rounded-2xl items-center active:opacity-80"
+            style={{
+              backgroundColor: acknowledged ? colors.accent : colors.bgSecondary,
+            }}
+          >
+            <Text
+              className="text-lg font-semibold"
+              style={{ color: acknowledged ? (isDark ? '#2B3830' : '#FFFFFF') : colors.textTertiary }}
+            >
+              I Agree & Continue
+            </Text>
+          </Pressable>
+        </Animated.View>
+      </ScrollView>
+    </SafeAreaView>
+  );
+}
