@@ -150,7 +150,7 @@ export default function SettingsScreen() {
     try {
       await Share.share({
         message: fullExport,
-        title: 'TinyPractice Data Export',
+        title: 'SteadyPractice Data Export',
       });
     } catch {
       // User cancelled
@@ -170,13 +170,13 @@ export default function SettingsScreen() {
         appointments: state.appointments,
       };
 
-      const filename = `tinypractice-backup-${new Date().toISOString().split('T')[0]}.json`;
+      const filename = `steadypractice-backup-${new Date().toISOString().split('T')[0]}.json`;
       const path = `${FileSystem.documentDirectory}${filename}`;
       await FileSystem.writeAsStringAsync(path, JSON.stringify(backup, null, 2));
 
       await Sharing.shareAsync(path, {
         mimeType: 'application/json',
-        dialogTitle: 'Save TinyPractice Backup',
+        dialogTitle: 'Save SteadyPractice Backup',
       });
     } catch (error) {
       Alert.alert('Backup Failed', 'Could not create backup file. Please try again.');
@@ -187,7 +187,7 @@ export default function SettingsScreen() {
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
     try {
       await Share.share({
-        message: `I run my therapy practice on TinyPractice — session notes, scheduling, invoices, all local to my phone. No $99/mo SimplePractice subscription. Free to try: https://apps.apple.com/app/id6758564968`,
+        message: `I run my therapy practice on SteadyPractice — session notes, scheduling, invoices, all local to my phone. No $99/mo SimplePractice subscription. Free to try: https://apps.apple.com/app/id6758564968`,
       });
     } catch {
       // User cancelled
@@ -195,11 +195,11 @@ export default function SettingsScreen() {
   };
 
   const handlePrivacy = () => {
-    Linking.openURL('https://tinypractice.app/privacy.html');
+    Linking.openURL('https://steadypractice.app/privacy.html');
   };
 
   const handleSupport = () => {
-    Linking.openURL('mailto:support@tinypractice.app');
+    Linking.openURL('mailto:support@steadypractice.app');
   };
 
   const handleChangePin = () => {
@@ -591,7 +591,7 @@ export default function SettingsScreen() {
                 </View>
                 <View className="ml-3 flex-1">
                   <Text className="text-base font-semibold" style={{ color: '#047857' }}>
-                    TinyPractice Pro
+                    SteadyPractice Pro
                   </Text>
                   <Text className="text-sm" style={{ color: '#059669' }}>
                     All features unlocked
@@ -683,7 +683,7 @@ export default function SettingsScreen() {
         </Text>
         <SettingItem
           icon={<Share2 size={20} color={colors.textTertiary} />}
-          title="Share TinyPractice with a Colleague"
+          title="Share SteadyPractice with a Colleague"
           subtitle="Recommend to a fellow therapist"
           onPress={handleShareApp}
           index={6}
@@ -707,7 +707,7 @@ export default function SettingsScreen() {
           icon={<FileText size={20} color={colors.textTertiary} />}
           title="Terms of Service"
           subtitle="View terms of use"
-          onPress={() => Linking.openURL('https://tinypractice.app/terms.html')}
+          onPress={() => Linking.openURL('https://steadypractice.app/terms.html')}
           index={7}
         />
         <SettingItem
@@ -829,7 +829,7 @@ export default function SettingsScreen() {
         {/* Version */}
         <View className="items-center mt-8">
           <Text className="text-sm" style={{ color: colors.textTertiary }}>
-            TinyPractice v3.0.0
+            SteadyPractice v3.0.0
           </Text>
           <Text className="text-xs mt-1" style={{ color: colors.textTertiary }}>
             Local-only data storage
