@@ -641,7 +641,7 @@ export default function DashboardScreen() {
                   <Crown size={24} color="#FFFFFF" />
                   <View className="ml-3 flex-1">
                     <Text className="text-lg font-bold" style={{ color: '#FFFFFF' }}>
-                      TinyPractice Pro
+                      SteadyPractice Pro
                     </Text>
                     <Text className="text-sm" style={{ color: 'rgba(255,255,255,0.9)' }}>
                       All features unlocked
