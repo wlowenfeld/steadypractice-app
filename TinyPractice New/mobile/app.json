@@ -1,1 +1,27 @@
-placeholder_app_json
+{
+  "expo": {
+    "name": "SteadyPractice",
+    "slug": "steadypractice",
+    "scheme": "vibecode",
+    "version": "3.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.vibecode.sessionary.l6pgy8",
+      "buildNumber": "18",
+      "infoPlist": {}
+    },
+    "android": {
+      "edgeToEdgeEnabled": true
+    },
+    "plugins": [
+      "expo-router"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "icon": "./icon.png"
+  }
+}
