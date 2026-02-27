@@ -86,7 +86,7 @@ export default function OpenSourceLicensesScreen() {
             </View>
           </View>
           <Text className="text-sm text-center leading-relaxed" style={{ color: colors.textSecondary }}>
-            TinyPractice is built with the following open source software. We're grateful to the developers and communities behind these projects.
+            SteadyPractice is built with the following open source software. We're grateful to the developers and communities behind these projects.
           </Text>
         </Animated.View>
 

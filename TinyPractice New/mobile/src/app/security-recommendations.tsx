@@ -8,7 +8,7 @@ import { useTheme } from '@/lib/theme';
 
 const SECURITY_TIPS = [
   'Set a strong device passcode (or use Face ID / Touch ID)',
-  'Enable the TinyPractice PIN lock in Settings',
+  'Enable the SteadyPractice PIN lock in Settings',
   'Keep your iPhone updated to the latest iOS version',
   'Enable "Find My iPhone" so you can remotely wipe if your device is lost',
 ];
