@@ -59,7 +59,7 @@ const legacyHashPin = (pin: string): string => {
 const hashPin = async (pin: string): Promise<string> => {
   return await Crypto.digestStringAsync(
     Crypto.CryptoDigestAlgorithm.SHA256,
-    pin + 'tinypractice-salt-2026'
+    pin + 'steadypractice-salt-2026'
   );
 };
 

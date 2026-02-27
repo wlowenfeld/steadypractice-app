@@ -9,7 +9,7 @@ import { useSecurity } from '@/lib/security';
 
 const SECURITY_TIPS = [
   'Set a strong device passcode (or use Face ID / Touch ID)',
-  'Enable the TinyPractice PIN lock in Settings',
+  'Enable the SteadyPractice PIN lock in Settings',
   'Keep your iPhone updated to the latest iOS version',
   'Enable "Find My iPhone" so you can remotely wipe if your device is lost',
 ];
@@ -42,7 +42,7 @@ export default function HipaaDisclaimer() {
             Privacy Notice
           </Text>
           <Text className="text-base text-center mt-2" style={{ color: colors.textSecondary }}>
-            Please review before using TinyPractice
+            Please review before using SteadyPractice
           </Text>
         </Animated.View>
 
@@ -92,13 +92,13 @@ export default function HipaaDisclaimer() {
           entering={FadeInDown.delay(250).springify()}
           className="mx-4 mb-6 flex-row justify-center gap-4"
         >
-          <Pressable onPress={() => Linking.openURL('https://tinypractice.app/privacy.html')}>
+          <Pressable onPress={() => Linking.openURL('https://steadypractice.app/privacy.html')}>
             <Text className="text-sm underline" style={{ color: colors.accent }}>
               Privacy Policy
             </Text>
           </Pressable>
           <Text className="text-sm" style={{ color: colors.textTertiary }}>·</Text>
-          <Pressable onPress={() => Linking.openURL('https://tinypractice.app/terms.html')}>
+          <Pressable onPress={() => Linking.openURL('https://steadypractice.app/terms.html')}>
             <Text className="text-sm underline" style={{ color: colors.accent }}>
               Terms of Service
             </Text>

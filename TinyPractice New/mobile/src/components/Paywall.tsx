@@ -333,7 +333,7 @@ export default function Paywall({ visible, onClose, onSuccess }: PaywallProps) {
                     By subscribing, you agree to our{' '}
                   </Text>
                   <Pressable
-                    onPress={() => Linking.openURL('https://tinypractice.app/terms.html')}
+                    onPress={() => Linking.openURL('https://steadypractice.app/terms.html')}
                   >
                     <Text className="text-xs underline" style={{ color: colors.textTertiary }}>
                       Terms of Use
@@ -343,7 +343,7 @@ export default function Paywall({ visible, onClose, onSuccess }: PaywallProps) {
                     {' '}and{' '}
                   </Text>
                   <Pressable
-                    onPress={() => Linking.openURL('https://tinypractice.app/privacy.html')}
+                    onPress={() => Linking.openURL('https://steadypractice.app/privacy.html')}
                   >
                     <Text className="text-xs underline" style={{ color: colors.textTertiary }}>
                       Privacy Policy
