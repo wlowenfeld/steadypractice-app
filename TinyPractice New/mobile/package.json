@@ -1,5 +1,5 @@
 {
-  "name": "template-app-53",
+  "name": "steadypractice",
   "version": "2.3.0",
   "main": "index.ts",
   "scripts": {
@@ -40,7 +40,6 @@
     "@shopify/flash-list": "1.7.6",
     "@shopify/react-native-skia": "v2.0.3",
     "@tanstack/react-query": "5.90.2",
-    "@vibecodeapp/sdk": "^0.4.14",
     "burnt": "^0.13.0",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
