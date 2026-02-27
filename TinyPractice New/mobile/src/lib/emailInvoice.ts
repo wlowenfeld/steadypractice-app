@@ -38,7 +38,7 @@ export async function sendInvoiceEmail({
     });
   };
 
-  const fromName = businessName || 'TinyPractice';
+  const fromName = businessName || 'SteadyPractice';
   const subject = `Invoice: ${invoice.description} - ${formatCurrency(invoice.amount)}`;
 
   const paymentSection = paymentInstructions
@@ -70,7 +70,7 @@ Best regards,
 ${fromName}
 
 ---
-This invoice was generated using TinyPractice.`;
+This invoice was generated using SteadyPractice.`;
 
   const isAvailable = await MailComposer.isAvailableAsync();
 

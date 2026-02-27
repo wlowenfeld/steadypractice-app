@@ -86,12 +86,12 @@ export async function markInvoiceCelebrationShown(): Promise<void> {
 }
 
 /**
- * Open the share sheet with the TinyPractice referral message.
+ * Open the share sheet with the SteadyPractice referral message.
  */
 export async function shareApp(): Promise<void> {
   try {
     await Share.share({
-      message: `I run my therapy practice on TinyPractice — session notes, scheduling, invoices, all local to my phone. No $99/mo SimplePractice subscription. Free to try: https://apps.apple.com/app/id6758564968`,
+      message: `I run my therapy practice on SteadyPractice — session notes, scheduling, invoices, all local to my phone. No $99/mo SimplePractice subscription. Free to try: https://apps.apple.com/app/id6758564968`,
     });
   } catch {
     // User cancelled
