@@ -607,7 +607,7 @@ export default function AddSessionScreen() {
                 <Share2 size={32} color="#0369A1" />
               </View>
               <Text className="text-xl font-bold text-center" style={{ color: colors.text }}>
-                Enjoying TinyPractice?
+                Enjoying SteadyPractice?
               </Text>
               <Text className="text-base text-center mt-2" style={{ color: colors.textSecondary }}>
                 Share it with a colleague.
@@ -621,7 +621,7 @@ export default function AddSessionScreen() {
             >
               <Share2 size={18} color={isDark ? '#2B3830' : '#FFFFFF'} />
               <Text className="font-semibold text-base ml-2" style={{ color: isDark ? '#2B3830' : '#FFFFFF' }}>
-                Share TinyPractice
+                Share SteadyPractice
               </Text>
             </Pressable>
 
