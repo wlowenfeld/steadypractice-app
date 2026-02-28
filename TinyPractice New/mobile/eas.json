@@ -1,40 +1,40 @@
 {
-  "cli": {
-    "version": "16.17.4"
-  },
-  "build": {
-    "development": {
-      "developmentClient": true,
-      "distribution": "internal",
-      "ios": {
-        "simulator": true
-      }
-    },
-    "preview": {
-      "distribution": "internal"
-    },
-    "production": {
-      "env": {
-        "EXPO_PUBLIC_VIBECODE_BACKEND_URL": "https://turbine-confidant.vibecode.run",
-        "EXPO_PUBLIC_VIBECODE_REVENUECAT_TEST_KEY": "test_qINPiwhTWiMRsvgPGEJJOYaEQPP",
-        "BACKEND_URL": "https://turbine-confidant.vibecode.run",
-        "EXPO_PUBLIC_BACKEND_URL": "https://turbine-confidant.vibecode.run",
-        "EXPO_PUBLIC_VIBECODE_REVENUECAT_APPLE_KEY": "appl_knNjVObVXxOvjTVgPIrwCVOHFNv",
-        "EXPO_PUBLIC_VIBECODE_REVENUECAT_GOOGLE_KEY": "goog_bPSgkcKNqniaoLGfTzcQrptJvvp"
-      },
-      "ios": {
-        "distribution": "store"
-      },
-      "android": {
-        "distribution": "store"
-      }
-    }
-  },
-  "submit": {
-    "production": {
-      "ios": {
-        "ascAppId": "6758564968"
-      }
-    }
-  }
+    "cli":  {
+                "version":  "\u003e=18.0.0"
+            },
+    "build":  {
+                  "development":  {
+                                      "developmentClient":  true,
+                                      "distribution":  "internal",
+                                      "ios":  {
+
+                                              }
+                                  },
+                  "preview":  {
+                                  "distribution":  "internal"
+                              },
+                  "production":  {
+                                     "env":  {
+                                                 "EXPO_PUBLIC_VIBECODE_BACKEND_URL":  "https://turbine-confidant.vibecode.run",
+                                                 "EXPO_PUBLIC_VIBECODE_REVENUECAT_TEST_KEY":  "test_qINPiwhTWiMRsvgPGEJJOYaEQPP",
+                                                 "BACKEND_URL":  "https://turbine-confidant.vibecode.run",
+                                                 "EXPO_PUBLIC_BACKEND_URL":  "https://turbine-confidant.vibecode.run",
+                                                 "EXPO_PUBLIC_VIBECODE_REVENUECAT_APPLE_KEY":  "appl_knNjVObVXxOvjTVgPIrwCVOHFNv",
+                                                 "EXPO_PUBLIC_VIBECODE_REVENUECAT_GOOGLE_KEY":  "goog_bPSgkcKNqniaoLGfTzcQrptJvvp"
+                                             },
+                                     "ios":  {
+                                                 "distribution":  "store"
+                                             },
+                                     "android":  {
+                                                     "distribution":  "store"
+                                                 }
+                                 }
+              },
+    "submit":  {
+                   "production":  {
+                                      "ios":  {
+                                                  "ascAppId":  "6758564968"
+                                              }
+                                  }
+               }
 }

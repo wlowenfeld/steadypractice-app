@@ -1,27 +1,36 @@
 {
-  "expo": {
-    "name": "SteadyPractice",
-    "slug": "steadypractice",
-    "scheme": "vibecode",
-    "version": "3.0.0",
-    "orientation": "portrait",
-    "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
-    "ios": {
-      "supportsTablet": false,
-      "bundleIdentifier": "com.vibecode.sessionary.l6pgy8",
-      "buildNumber": "18",
-      "infoPlist": {}
-    },
-    "android": {
-      "edgeToEdgeEnabled": true
-    },
-    "plugins": [
-      "expo-router"
-    ],
-    "experiments": {
-      "typedRoutes": true
-    },
-    "icon": "./icon.png"
-  }
+    "expo":  {
+                 "name":  "SteadyPractice",
+                 "slug":  "steadypractice",
+                 "scheme":  "vibecode",
+                 "version":  "3.0.0",
+                 "orientation":  "portrait",
+                 "userInterfaceStyle":  "automatic",
+                 "newArchEnabled":  true,
+                 "ios":  {
+                             "supportsTablet":  false,
+                             "bundleIdentifier":  "com.vibecode.sessionary.l6pgy8",
+                             "buildNumber":  "18",
+                             "infoPlist":  {
+                                               "ITSAppUsesNonExemptEncryption":  false
+                                           }
+                         },
+                 "android":  {
+                                 "edgeToEdgeEnabled":  true
+                             },
+                 "plugins":  [
+                                 "expo-router",
+                                 "@react-native-community/datetimepicker",
+                                 "expo-build-properties"
+                             ],
+                 "experiments":  {
+                                     "typedRoutes":  true
+                                 },
+                 "icon":  "./icon.png",
+                 "extra":  {
+                               "eas":  {
+                                           "projectId":  "6c2f5e6c-dda3-43e5-98d8-9175c63c6038"
+                                       }
+                           }
+             }
 }
