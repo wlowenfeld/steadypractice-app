@@ -1,4 +1,4 @@
-{
+﻿{
     "cli":  {
                 "version":  "\u003e=18.0.0"
             },
@@ -7,7 +7,7 @@
                                       "developmentClient":  true,
                                       "distribution":  "internal",
                                       "ios":  {
-
+                                                  "image":  "macos-sequoia-15.6-xcode-16.4"
                                               }
                                   },
                   "preview":  {
